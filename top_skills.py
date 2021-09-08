@@ -24,14 +24,7 @@ def main():
         all_skills += skills
         print(f"{pos}) {vacancy_url} --- {skills}")
 
-    # with open("skills.txt", "w", encoding="utf-8") as file:
-    #     for skill in all_skills:
-    #         file.write(f"{skill}\n")
-
     # 3. Find most frequent ones
-    # with open("skills.txt", "r", encoding="utf-8") as file:
-    #     skills = [row.strip("\n") for row in file]
-
     skill_freqs = Counter(all_skills).most_common(15)
     table = PrettyTable(field_names=["skill", "frequency"], title="Top Skills")
     table.add_rows([[skill, frequency] for skill, frequency in skill_freqs])
